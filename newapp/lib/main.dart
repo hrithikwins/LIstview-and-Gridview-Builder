@@ -25,12 +25,17 @@ class MyApp extends StatelessWidget {
             // removed appbar and wrapped scaffold with safeArea
             body: GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2),
+                  crossAxisCount: 2,
+                ),
                 itemBuilder: (BuildContext context, int index) {
                   return ElevatedButton(
                     onPressed: () {
-                      // changing .push to .pushnamed
-                      Navigator.pushNamed(context, '/second');
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => SecondPage(),
+                        ),
+                      );
                     },
                     child: Text('one'),
                   );
